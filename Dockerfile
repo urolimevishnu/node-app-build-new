@@ -1,5 +1,5 @@
 # Use the official Node.js image as the base image
-FROM node
+FROM ubuntu:latest
 
 # Set the working directory inside the container
 WORKDIR /usr/src/app
@@ -7,6 +7,7 @@ WORKDIR /usr/src/app
 # Copy package.json and package-lock.json files to the working directory
 COPY package*.json ./
 
+RUN apt install nodejs -y
 # Install dependencies
 RUN npm install
 
